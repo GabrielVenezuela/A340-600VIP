@@ -1,4 +1,4 @@
-#A340-600HGW systems
+#A340 systems
 #Syd Adams adapted by Andino
 #
 var SndOut = props.globals.getNode("/sim/sound/Ovolume",1);
@@ -991,8 +991,7 @@ _setlistener("/sim/signals/fdm-initialized", func {
 
 
 setlistener("/sim/signals/fdm-initialized", func {	
-  	itaf.ap_init();			
-	setprop("/it-autoflight/settings/retard-enable", 0);  # Enable or disable automatic autothrottle retard.
-	setprop("/it-autoflight/settings/retard-ft", 20);     # Add this to change the retard altitude, default is 50ft AGL.
-	setprop("/it-autoflight/settings/land-flap", 0.620);  # Define the landing flaps here. This is needed for autoland, and retard.
+  	itaf.ap_init();
+	setprop("/it-autoflight/input/fd1", 1);
+	setprop("/it-autoflight/input/fd2", 1);
 });
